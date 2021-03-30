@@ -1,2 +1,3 @@
 # web-crawler
-s
+Crawler enqueues crawling tasks in a Task queue. New urls are vistied by a puppeteer backend to evaluate javascript. A script for frontend-framework detection is run. The website is categorized in javascript dependency. Simple http requests crawl non dependent and an optimized puppeteer version crawls js dependent sites. 
+Enqueued urls can be grabbed by workers that can be run decentralized by way of work-stealing, their code is run by emulating the browsers's window interface or are directly run in the browser if the website needs js. The worker also implements a filter which url's will be enqueued. The html and/or the parsed results can be cached in mongodb.
